@@ -9,3 +9,8 @@
   font-family: "sixty";
   src: url("./assets/sixty.ttf");
 }
+
+@font-face {
+  font-family: "atami";
+  src: url("./assets/atami.ttf");
+}

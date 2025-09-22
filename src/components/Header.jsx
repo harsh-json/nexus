@@ -48,8 +48,6 @@ export default function Header() {
                 Nexus
             </Link>
             <PillNav
-                logo={logo}
-                logoAlt="Company Logo"
                 items={hrefs}
                 activeHref="/"
                 className="custom-nav"
