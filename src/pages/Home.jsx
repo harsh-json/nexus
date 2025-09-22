@@ -17,11 +17,24 @@ const founderArr = [{
 
 function FounderCard({ founder }) {
     return (
-        <div style={{zIndex:1000}} className="mt-6 founder-card bg-black/40 backdrop-blur-sm border border-gold/20 rounded-xl shadow-2xl w-full mx-auto transform hover:scale-[1.02] transition-all duration-300 group">
-            <p className="text-6xl mb-6 bg-gradient-to-r from-gold via-amber-200 to-gold bg-clip-text text-transparent font-bold tracking-tight">{founder.position}</p>
-            <img src={founder.imageUrl} alt={founder.name} className="w-full h-48 object-cover rounded-lg mb-6 shadow-lg transform group-hover:scale-[1.02] transition-all duration-300" />
-            <h4 className="text-2xl font-bold text-gold mb-4">{founder.name}</h4>
-            <p className="text-xl font-[atami] px-4 text-amber-100/90 backdrop-blur-sm px-6 rounded-full bg-black/20 shadow-lg transform hover:scale-[1.02] transition-all mt-4 tracking-wide leading-8 duration-300">{founder.content}</p>
+        <div style={{zIndex:1000}} className="mt-16 p-8 founder-card bg-black/40 backdrop-blur-sm border border-gold/20 rounded-xl shadow-2xl w-full max-w-5xl mx-auto transform hover:scale-[1.01] transition-all duration-500 group">
+            <div className="flex flex-col md:flex-row items-center gap-12">
+                <div className="w-full md:w-1/3">
+                    <img 
+                        src={founder.imageUrl} 
+                        alt={founder.name} 
+                        className="aspect-[0.8] w-full object-cover rounded-lg shadow-2xl transform group-hover:scale-[1.02] transition-all duration-500 border border-gold/10" 
+                    />
+                </div>
+                <div className="w-full md:w-2/3 flex flex-col items-start text-left space-y-6">
+                    <div>
+                        <h4 className="text-4xl mb-2 bg-gradient-to-r from-gold via-amber-200 to-gold bg-clip-text text-transparent font-bold tracking-tight">{founder.name}</h4>
+                        <p className="text-xl text-amber-100/80 tracking-wider">{founder.position}</p>
+                    </div>
+                    <div className="h-px w-full bg-gradient-to-r from-transparent via-gold/20 to-transparent"></div>
+                    <p className="text-lg font-[atami] text-amber-100/90 tracking-wide leading-8 backdrop-blur-sm p-6 rounded-xl bg-black/20 shadow-lg border border-gold/5">{founder.content}</p>
+                </div>
+            </div>
         </div>
     );
 }
@@ -36,38 +49,58 @@ export default function Home() {
             >
                 Nexus
             </FuzzyText>
-            <div className="text-3xl flex flex-col gap-0 text-white font-thin max-w-4xl z-[105] font-[atami]">
-                <h1 className="text-6xl mb-6 bg-gradient-to-r from-gold via-amber-200 to-gold bg-clip-text text-transparent font-bold tracking-tight">
+            <div className="text-3xl flex flex-col gap-4 text-white font-thin max-w-4xl z-[105] font-[atami] mt-8">
+                <h1 className="text-7xl mb-8 bg-gradient-to-r from-gold via-amber-200 to-gold bg-clip-text text-transparent font-bold tracking-tight animate-gold-glow">
                     Independence vs Interdependence
                 </h1>
-                <p className="text-amber-100/90 backdrop-blur-sm px-6 rounded-full bg-black/20 shadow-lg transform hover:scale-[1.02] transition-all duration-300" >
+                <p className="text-amber-100/90 backdrop-blur-sm px-8 py-3 rounded-full bg-black/20 shadow-lg transform hover:scale-[1.02] transition-all duration-300 border border-gold/10" >
                     A collapsing world order<span className="font-serif text-gold/70">. &nbsp; </span>
                 </p>
-                <p className="text-amber-100/90 backdrop-blur-sm px-6 rounded-full bg-black/20 shadow-lg transform hover:scale-[1.02] transition-all duration-300" >
+                <p className="text-amber-100/90 backdrop-blur-sm px-8 py-3 rounded-full bg-black/20 shadow-lg transform hover:scale-[1.02] transition-all duration-300 border border-gold/10" >
                     A high<span className="font-serif text-gold/70">-</span>stakes business battleground<span className="font-serif text-gold/70">. &nbsp; </span>
                 </p>
-                <p className="text-amber-100/90 backdrop-blur-sm px-6 rounded-full bg-black/20 shadow-lg transform hover:scale-[1.02] transition-all duration-300" >
+                <p className="text-amber-100/90 backdrop-blur-sm px-8 py-3 rounded-full bg-black/20 shadow-lg transform hover:scale-[1.02] transition-all duration-300 border border-gold/10" >
                     Your decisions shape destiny<span className="font-serif text-gold/70">. &nbsp; </span>
                 </p>
-                <p className="text-amber-100/90 backdrop-blur-sm px-6 rounded-full bg-black/20 shadow-lg transform hover:scale-[1.02] transition-all duration-300" >
+                <p className="text-amber-100/90 backdrop-blur-sm px-8 py-3 rounded-full bg-black/20 shadow-lg transform hover:scale-[1.02] transition-all duration-300 border border-gold/10" >
                     Will you go solo<span className="font-serif text-gold/70">, &nbsp;</span>or rise through strategy and synergy<span className="font-serif text-gold/70">? &nbsp; </span>
                 </p>
             </div>
-            <p className="text-2xl font-[atami] max-w-5xl text-amber-100/90 backdrop-blur-sm px-6 rounded-full bg-black/20 shadow-lg transform hover:scale-[1.02] transition-all mt-4 tracking-wide leading-8 duration-300 whitespace-pre-wrap">
-                Why You’re Here
-                Independence vs Interdependence — A War of Wits
-                The world is in turmoil. A superpower imposes trade barriers, and chaos follows.
-                Fictional nations clash.
-                You lead one.
-                Will you isolate to survive or collaborate to thrive?
-                Each event simulates a real-world corporate crisis — and your team must decide:
-                Fight alone, or form powerful alliances?
-                Trust others, or rely on your instincts?
-                Welcome to NEXUS.
-                Where business isn’t taught.
-                It’s lived.
-            </p>
-            <div className="grid md:grid-cols-1 gap-8 w-full max-w-7xl px-4">
+            <div className="max-w-5xl mt-12 mb-8 px-8 py-10 backdrop-blur-md bg-black/30 rounded-2xl border border-gold/10 shadow-2xl">
+                <h2 className="text-4xl font-bold bg-gradient-to-r from-gold via-amber-200 to-gold bg-clip-text text-transparent mb-8">
+                    Why You're Here
+                </h2>
+                <div className="space-y-6 text-xl font-[atami] tracking-wide">
+                    <p className="text-2xl font-semibold text-amber-100">
+                        Independence vs Interdependence — A War of Wits
+                    </p>
+                    <div className="space-y-4 text-amber-100/90">
+                        <p className="leading-relaxed">
+                            The world is in turmoil. A superpower imposes trade barriers, and chaos follows.
+                            Fictional nations clash.
+                        </p>
+                        <p className="text-gold font-semibold text-2xl">You lead one.</p>
+                        <p className="leading-relaxed">
+                            Will you isolate to survive or collaborate to thrive?
+                            Each event simulates a real-world corporate crisis — and your team must decide:
+                        </p>
+                        <div className="flex flex-col gap-3 pl-4">
+                            <p className="flex items-center gap-2">
+                                <span className="text-gold">→</span> Fight alone, or form powerful alliances?
+                            </p>
+                            <p className="flex items-center gap-2">
+                                <span className="text-gold">→</span> Trust others, or rely on your instincts?
+                            </p>
+                        </div>
+                    </div>
+                    <div className="mt-10 pt-6 border-t border-gold/10">
+                        <p className="text-3xl font-bold text-gold mb-2">Welcome to NEXUS</p>
+                        <p className="text-xl text-amber-100/90">Where business isn't taught.</p>
+                        <p className="text-2xl font-bold text-gold mt-1">It's lived.</p>
+                    </div>
+                </div>
+            </div>
+            <div className="w-full px-4 space-y-16">
                 {founderArr.map((founder, index) => (
                     <FounderCard key={index} founder={founder} />
                 ))}
